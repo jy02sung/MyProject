@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelOneButton : MonoBehaviour
+public class BackButton : MonoBehaviour
 {
 
     public void Button()
     {
-        Invoke("LevelOne", 0.3f);
+        Invoke("Back", 0.3f);
     }
-    private void LevelOne()
+    private void Back()
     {
-        SceneManager.LoadScene("LevelOne");
+        SceneManager.LoadScene("ChooseLevel");
     }
 }
