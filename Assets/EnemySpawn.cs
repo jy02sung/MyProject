@@ -9,9 +9,14 @@ public class EnemySpawn : MonoBehaviour {
     float time;
     public int wave;
     int EnemyNumber;
+    public bool IsStart = false;
 
 	void Update ()
     {
+        if (!IsStart)
+        {
+            return;
+        }
         time += Time.deltaTime;
         if (EnemyNumber <= wave)
         {
