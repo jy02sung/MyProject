@@ -52,7 +52,7 @@ public class EnemyScript2 : MonoBehaviour
         else if (step == 4)
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, speed);
-            if (transform.position.y >= 5.0f)
+            if (transform.position.y >= 7.0f)
             {
                 Destroy(gameObject);
             }
