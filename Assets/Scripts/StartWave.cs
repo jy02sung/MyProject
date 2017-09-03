@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class StartWave : MonoBehaviour {
-    public GameObject spawner;
+    public List <GameObject> spawner;
 	// Use this for initialization
 	void Start () {
 		
@@ -15,7 +15,10 @@ public class StartWave : MonoBehaviour {
     }
     private void startgame()
     {
-        spawner.GetComponent<EnemySpawn>().IsStart = true;
+        foreach (GameObject S in spawner)
+        {
+            S.GetComponent<EnemySpawn>().IsStart = true;
+        }
         Destroy(gameObject);
     }
 }
