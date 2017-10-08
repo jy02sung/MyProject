@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyState : MonoBehaviour {
     public float HP;
+    public int Money;
 	// Use this for initialization
 	void Start () {
 		
@@ -14,6 +15,7 @@ public class EnemyState : MonoBehaviour {
         if (HP <= 0.0f)
         {
             Destroy(gameObject);
+            GameObject.Find("Money").GetComponent<PlayerMoney>().AddMoney(Money);
         }
 	}
 }
