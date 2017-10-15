@@ -32,6 +32,7 @@ public class EnemySpawn : MonoBehaviour {
             if (time >= WaitTime)
             {
                 EnemyNumber = 0;
+                IsStart = false;
             }
         }
 	}

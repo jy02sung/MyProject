@@ -17,10 +17,18 @@ public class MissileTurret : MonoBehaviour
         {
             time = 0.0f;
             GameObject[] Enemy = GameObject.FindGameObjectsWithTag("Enemy");
+            int Count = 0;
+            
             foreach (GameObject e in Enemy)
             {
                 if (Vector2.Distance(transform.position, e.transform.position) <= AttackRange)
                 {
+                    Count++;
+                    if (Count > 5)
+                    {
+                        break;
+                    }
+
                     GameObject Instance = Instantiate(Rocket);
                     Instance.transform.position = transform.position;
                     Instance.GetComponent<Rocket>().Target = e;
