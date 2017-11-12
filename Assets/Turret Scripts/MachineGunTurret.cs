@@ -21,6 +21,9 @@ public class MachineGunTurret : MonoBehaviour
             {
                 if (Vector2.Distance(transform.position, e.transform.position) <= AttackRange)
                 {
+                    Vector3 direction = e.transform.position - transform.position;
+                    float Angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                    transform.eulerAngles = new Vector3(0.0f, 0.0f, Angle - 90);
                     GameObject Instance = Instantiate(Bullet);
                     Instance.transform.position = transform.position;
                     Instance.GetComponent<Bullet>().Target = e;
