@@ -9,7 +9,7 @@ public class MachineGunTurret : MonoBehaviour
     public float AttackRange;
     float time;
     public GameObject Bullet;
-
+    public AudioClip GunSound;
     void Update()
     {
         time += Time.deltaTime;
@@ -28,6 +28,7 @@ public class MachineGunTurret : MonoBehaviour
                     Instance.transform.position = transform.position;
                     Instance.GetComponent<Bullet>().Target = e;
                     Instance.GetComponent<Bullet>().Attack = Attack;
+                    GetComponent<AudioSource>().PlayOneShot(GunSound);
                     break;
                 }
             }
